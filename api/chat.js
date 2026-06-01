@@ -18,21 +18,15 @@ module.exports = async function handler(req, res) {
       model: "gemini-2.5-flash",
     });
 
-    const result = await model.generateContent(`
+  const result = await model.generateContent(`
 You are a smart travel assistant.
 
-Answer in a concise way.
-Keep responses short, clear, and useful.
-Use maximum 4-6 short lines.
-Avoid long paragraphs.
-
-Help users with:
-- trip plans
-- packing
-- budget
-- safety
-- food
-- transport
+Answer in plain text only.
+Do not use markdown.
+Do not use asterisks.
+Do not use bullet symbols.
+Keep response concise, clean, and mobile-friendly.
+Use maximum 4 short lines.
 
 User message:
 ${message}
